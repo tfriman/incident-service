@@ -1,6 +1,6 @@
 #! /bin/sh
 
-curl -X POST -H "content-type: application/json" \
+curl -v -X POST -H "content-type: application/json" \
      -d '
    {"lat": "34.14338",
     "lon": "-77.86569",

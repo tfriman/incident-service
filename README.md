@@ -99,3 +99,21 @@ The command above references a boostrap config file (bootstrap.properties), whic
 ## Swagger 
 * Swagger ui: http://localhost:8080/swagger-ui.html
 * Swagger docs: http://localhost:8080/v2/api-docs
+
+# JSON Logging format
+
+See https://github.com/logstash/logstash-logback-encoder#customizing-json-factory-and-generator for options.
+
+Example of log entry:
+```json
+{
+    "timestamp": "2020-01-10T14:38:09.431+02:00",
+    "log-version": "1",
+    "message": "Sent 'IncidentReportedEvent' message for incident identifier=672dfb8b-17e7-4bd3-a702-2963df3fdb05",
+    "logger_name": "com.redhat.cajun.navy.incident.service.IncidentService",
+    "thread_name": "kafka-producer-network-thread | producer-1",
+    "level": "DEBUG",
+    "level_value": 10000,
+    "identifier": "672dfb8b-17e7-4bd3-a702-2963df3fdb05",
+    "application": "incident-service"
+}``` 
