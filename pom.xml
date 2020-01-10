@@ -188,6 +188,16 @@
   </build>
   <profiles>
     <profile>
+      <id>local</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
       <id>openshift</id>
       <build>
         <plugins>
