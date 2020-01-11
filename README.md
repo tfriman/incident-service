@@ -114,6 +114,8 @@ Example of log entry:
     "thread_name": "kafka-producer-network-thread | producer-1",
     "level": "DEBUG",
     "level_value": 10000,
-    "identifier": "672dfb8b-17e7-4bd3-a702-2963df3fdb05",
-    "application": "incident-service"
-}``` 
+    "incidentId": "672dfb8b-17e7-4bd3-a702-2963df3fdb05",
+    "application": "incident-service",
+    "er-demo": "yes"
+}
+``` 
