@@ -79,7 +79,9 @@ Due to the reactive nature of majority of the services do not use Mapped Diagnos
 
 ### Should log timestamps use UTC as only timezone?
 
-<timeZone>UTC</timeZone> 
+```xml
+<timeZone>UTC</timeZone>
+``` 
  
 ## Log format example
 
