@@ -17,10 +17,10 @@
         </encoder>
     </appender>
 
-    <logger name="com.redhat.cajun.navy.incident" level="INFO"/>
+    <logger name="com.redhat.cajun.navy.incident" level="DEBUG"/>
 
     <root level="INFO">
-        <appender-ref ref="STDOUT-JSON"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 
 </configuration>
