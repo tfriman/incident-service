@@ -25,7 +25,7 @@ import static net.logstash.logback.argument.StructuredArguments.kv;
 public class IncidentService {
 
     private static final Logger log = LoggerFactory.getLogger(IncidentService.class);
-    private final String IDENTIFIER = "identifier";
+    private final String IDENTIFIER = "incidentId";
 
     @Autowired
     private KafkaTemplate<String, Message<?>> kafkaTemplate;
@@ -59,8 +59,11 @@ public class IncidentService {
 
         ListenableFuture<SendResult<String, Message<?>>> future = kafkaTemplate.send(reportedDestination, message.getBody().getId(), message);
         future.addCallback(
-                result -> log.debug("Sent 'IncidentReportedEvent' message for incident {}", kv(IDENTIFIER, message.getBody().getId())),
-                ex -> log.error("Error sending 'IncidentReportedEvent' message for incident {} ", message.getBody().getId(), ex));
+                result -> {
+                    log.debug("Sent 'IncidentReportedEvent' message for incident {}", kv(IDENTIFIER, message.getBody().getId()));
+                    log.info("Sent 'IncidentReportedEvent' message for incident.");
+                },
+                ex -> log.error("Error sending 'IncidentReportedEvent' message for incident {} ", kv(IDENTIFIER, message.getBody().getId()), ex));
 
         return fromEntity(created);
     }
